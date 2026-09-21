@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta name="description" content="10 次模拟，破解 15 道题的隐藏答案。一个可直接游玩的信息论小游戏。" />
+    <meta property="og:title" content="白纸考试 · BWBM" />
+    <meta property="og:description" content="10 次模拟，破解 15 道题的隐藏答案。" />
+    <meta property="og:type" content="website" />
+    <title>白纸考试 · BWBM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="白纸考试首页">
+        <span class="brand-dot">B</span>
+        <span>白纸考试</span>
+        <small>BWBM</small>
+      </a>
+      <div class="top-actions">
+        <button class="quiet-button" id="rules-button">玩法</button>
+        <button class="quiet-button" id="share-button">分享</button>
+        <button class="dark-button small" id="new-game">新一局</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="game-column">
+        <div class="headline">
+          <p class="kicker">10 次模拟 · 15 个位置 · 1 个总分</p>
+          <h1>一串分数，<br />能泄露多少答案？</h1>
+          <p>点击卡片切换 A–E，设计你的查询。普通位置命中得 10 分，三个未知高价值位置命中得 30 分。</p>
+        </div>
+
+        <section class="game-card" aria-labelledby="board-title">
+          <div class="game-card-head">
+            <div>
+              <span class="mode-label" id="mode-label">模拟阶段</span>
+              <h2 id="board-title">第 <b id="round-number">1</b> 次查询</h2>
+            </div>
+            <div class="latest-score">
+              <span>最近得分</span>
+              <strong id="latest-score">—</strong>
+            </div>
+          </div>
+
+          <div class="round-track" id="round-track" aria-label="查询进度"></div>
+          <div class="answer-board" id="answer-board" aria-label="15 个答题位置"></div>
+
+          <div class="board-tools">
+            <span>快速填充</span>
+            <button data-fill="baseline">平衡排列</button>
+            <button data-fill="random">随机平衡</button>
+            <button data-fill="clear">清空</button>
+          </div>
+
+          <div class="submit-row">
+            <button class="final-button" id="finish-early">现在交卷</button>
+            <button class="dark-button submit-button" id="submit-button">提交模拟 <span>→</span></button>
+          </div>
+          <p class="message" id="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <details class="research-panel">
+          <summary><span>研究视角</span><small>展开候选样本与预计信息量</small></summary>
+          <div class="research-grid">
+            <div><span>当前查询预计信息量</span><strong><b id="forecast-bits">0.00</b> bit</strong></div>
+            <div><span>一致样本仍存活</span><strong id="survivor-count">8,001</strong></div>
+            <div><span>累计获得信息</span><strong><b id="gained-bits">0.00</b> bit</strong></div>
+          </div>
+          <p>这些数值来自固定大小的 Monte Carlo 联合状态样本，用于直观比较，不是全状态空间的精确枚举。</p>
+        </details>
+      </section>
+
+      <aside class="side-column">
+        <section class="score-card">
+          <span>理论满分</span>
+          <strong>210</strong>
+          <div><i></i><p><b>3</b> 个高价值位置<br /><b>12</b> 个普通位置</p></div>
+        </section>
+
+        <section class="history-card">
+          <div class="section-title"><h2>得分记录</h2><span id="used-count">0 / 10</span></div>
+          <div class="empty-history" id="empty-history">你的每次试探都会留在这里。</div>
+          <ol id="history-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <section class="result-screen" id="result-screen" hidden aria-live="polite">
+      <div class="result-card">
+        <span class="result-kicker">最终成绩</span>
+        <strong id="final-score">0</strong>
+        <p id="result-copy"></p>
+        <div class="reveal-answer"><span>正确答案</span><code id="true-answer"></code></div>
+        <div class="high-positions"><span>高价值位置</span><strong id="high-positions"></strong></div>
+        <button class="dark-button" id="play-again">再玩一局</button>
+      </div>
+    </section>
+
+    <dialog id="rules-dialog">
+      <button class="dialog-close" id="close-rules" aria-label="关闭玩法说明">×</button>
+      <p class="kicker">HOW TO PLAY</p>
+      <h2>十次试探，一次交卷。</h2>
+      <ol>
+        <li><b>设计查询</b><span>为 15 个位置填写 A–E，也可以留空。</span></li>
+        <li><b>读取总分</b><span>系统只告诉你总分，不指出哪些位置正确。</span></li>
+        <li><b>继续试探</b><span>最多模拟 10 次，利用分数缩小答案范围。</span></li>
+        <li><b>最终交卷</b><span>填满 15 个位置；你的答卷不受隐藏答案的组成约束。</span></li>
+      </ol>
+      <button class="dark-button start-button" id="start-game">开始挑战 <span>→</span></button>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer>
+      <span>Balanced Weighted Black-Peg Mastermind</span>
+      <a href="https://github.com/menghuainanfang/BWBM" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
+
+    <script src="core.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

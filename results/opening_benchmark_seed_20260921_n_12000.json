@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "model": "Balanced Weighted Black-Peg Mastermind",
+    "estimator": "Monte Carlo partition of uniformly sampled joint (X,H) states",
+    "seed": 20260921,
+    "sample_size": 12000,
+    "generated_at": "2026-09-21T04:55:44.926Z",
+    "configuration": {
+      "n": 15,
+      "alphabet": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "copiesPerSymbol": 3,
+      "highPositionCount": 3,
+      "ordinaryWeight": 1,
+      "highWeight": 3,
+      "pointUnit": 10,
+      "queryBudget": 10,
+      "finalAnswerMustBeBalanced": false,
+      "answerStateCount": 168168000,
+      "highSetCount": 455,
+      "jointStateCount": 76516440000
+    }
+  },
+  "records": [
+    {
+      "rounds": 1,
+      "strategy": "baseline-only",
+      "entropy_bits": 3.3303428364699625,
+      "signature_count": 16,
+      "largest_bucket_share": 0.1455,
+      "collision_probability": 0.11171341666666665,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 1,
+      "strategy": "cyclic",
+      "entropy_bits": 3.3303428364699625,
+      "signature_count": 16,
+      "largest_bucket_share": 0.1455,
+      "collision_probability": 0.11171341666666665,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 1,
+      "strategy": "orthogonal",
+      "entropy_bits": 3.3303428364699625,
+      "signature_count": 16,
+      "largest_bucket_share": 0.1455,
+      "collision_probability": 0.11171341666666665,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 1,
+      "strategy": "random-balanced",
+      "entropy_bits": 3.318440998121065,
+      "signature_count": 17,
+      "largest_bucket_share": 0.14866666666666667,
+      "collision_probability": 0.11300708333333334,
+      "sample_separated_share": 0.00008333333333333333
+    },
+    {
+      "rounds": 1,
+      "strategy": "concentrated",
+      "entropy_bits": 2.019592686805496,
+      "signature_count": 7,
+      "largest_bucket_share": 0.3865,
+      "collision_probability": 0.29475295833333326,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 2,
+      "strategy": "baseline-only",
+      "entropy_bits": 3.3303428364699625,
+      "signature_count": 16,
+      "largest_bucket_share": 0.1455,
+      "collision_probability": 0.11171341666666665,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 2,
+      "strategy": "cyclic",
+      "entropy_bits": 6.598506247536401,
+      "signature_count": 174,
+      "largest_bucket_share": 0.021833333333333333,
+      "collision_probability": 0.012694250000000008,
+      "sample_separated_share": 0.0015833333333333333
+    },
+    {
+      "rounds": 2,
+      "strategy": "orthogonal",
+      "entropy_bits": 6.591481490355894,
+      "signature_count": 174,
+      "largest_bucket_share": 0.02225,
+      "collision_probability": 0.012760041666666671,
+      "sample_separated_share": 0.0015833333333333333
+    },
+    {
+      "rounds": 2,
+      "strategy": "random-balanced",
+      "entropy_bits": 6.596360482988805,
+      "signature_count": 190,
+      "largest_bucket_share": 0.023666666666666666,
+      "collision_probability": 0.012926027777777797,
+      "sample_separated_share": 0.0020833333333333333
+    },
+    {
+      "rounds": 2,
+      "strategy": "concentrated",
+      "entropy_bits": 3.981934367197151,
+      "signature_count": 36,
+      "largest_bucket_share": 0.15308333333333332,
+      "collision_probability": 0.0878713611111111,
+      "sample_separated_share": 0.00008333333333333333
+    },
+    {
+      "rounds": 3,
+      "strategy": "baseline-only",
+      "entropy_bits": 3.3303428364699625,
+      "signature_count": 16,
+      "largest_bucket_share": 0.1455,
+      "collision_probability": 0.11171341666666665,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 3,
+      "strategy": "cyclic",
+      "entropy_bits": 9.644645850935122,
+      "signature_count": 1243,
+      "largest_bucket_share": 0.004333333333333333,
+      "collision_probability": 0.0016177500000000037,
+      "sample_separated_share": 0.01633333333333333
+    },
+    {
+      "rounds": 3,
+      "strategy": "orthogonal",
+      "entropy_bits": 9.660561725366634,
+      "signature_count": 1266,
+      "largest_bucket_share": 0.003916666666666666,
+      "collision_probability": 0.001592430555555557,
+      "sample_separated_share": 0.018333333333333333
+    },
+    {
+      "rounds": 3,
+      "strategy": "random-balanced",
+      "entropy_bits": 9.793909211672936,
+      "signature_count": 1495,
+      "largest_bucket_share": 0.004166666666666667,
+      "collision_probability": 0.001512694444444443,
+      "sample_separated_share": 0.030666666666666665
+    },
+    {
+      "rounds": 3,
+      "strategy": "concentrated",
+      "entropy_bits": 5.859870236791813,
+      "signature_count": 141,
+      "largest_bucket_share": 0.06433333333333334,
+      "collision_probability": 0.027661819444444458,
+      "sample_separated_share": 0.0004166666666666667
+    },
+    {
+      "rounds": 4,
+      "strategy": "baseline-only",
+      "entropy_bits": 3.3303428364699625,
+      "signature_count": 16,
+      "largest_bucket_share": 0.1455,
+      "collision_probability": 0.11171341666666665,
+      "sample_separated_share": 0
+    },
+    {
+      "rounds": 4,
+      "strategy": "cyclic",
+      "entropy_bits": 11.506662829675802,
+      "signature_count": 4100,
+      "largest_bucket_share": 0.0021666666666666666,
+      "collision_probability": 0.0004698472222222408,
+      "sample_separated_share": 0.14025
+    },
+    {
+      "rounds": 4,
+      "strategy": "orthogonal",
+      "entropy_bits": 12.062660263236392,
+      "signature_count": 5356,
+      "largest_bucket_share": 0.0010833333333333333,
+      "collision_probability": 0.00028894444444447066,
+      "sample_separated_share": 0.205
+    },
+    {
+      "rounds": 4,
+      "strategy": "random-balanced",
+      "entropy_bits": 12.303228397325878,
+      "signature_count": 6266,
+      "largest_bucket_share": 0.001,
+      "collision_probability": 0.0002471805555555921,
+      "sample_separated_share": 0.2930833333333333
+    },
+    {
+      "rounds": 4,
+      "strategy": "concentrated",
+      "entropy_bits": 7.535719197352067,
+      "signature_count": 471,
+      "largest_bucket_share": 0.026833333333333334,
+      "collision_probability": 0.009777027777777794,
+      "sample_separated_share": 0.004833333333333334
+    }
+  ]
+}
